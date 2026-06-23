@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="result-container">
+
+    <div class="result-card {{ status }}">
+
+        <h1>{{ result }}</h1>
+
+        <h2>AI Prediction Confidence</h2>
+
+        <div class="confidence-box">
+            {{ confidence }}%
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: {{ confidence }}%;"></div>
+        </div>
+
+        {% if warnings %}
+
+        <div class="warning-box">
+
+            <h3>⚠ Parameter Alerts</h3>
+
+            <ul>
+                {% for warning in warnings %}
+                    <li>{{ warning }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        {% else %}
+
+        <div class="safe-box">
+            ✅ All entered parameters are within normal ranges.
+        </div>
+
+        {% endif %}
+
+        <a href="/" class="back-btn">
+            ← Analyze Another Sample
+        </a>
+        <p class="model-info">
+Model: Random Forest Classifier | Features: 9 Water Quality Parameters
+</p>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

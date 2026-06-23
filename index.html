@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaGuard AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="nav-logo">
+             AquaGuard AI
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#future">Future Scope</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+    <div class="hero-left">
+
+        <div class="logo">
+             AquaGuard AI
+        </div>
+
+        <h1>
+            Confidence-Aware
+            <span>Water Potability</span>
+            Prediction
+        </h1>
+
+        <p>
+            Predict whether water is safe to drink using
+            Machine Learning, Confidence Scoring,
+            and Intelligent Safety Alerts.
+        </p>
+
+    </div>
+
+    <div class="hero-right">
+
+        <img
+        src="{{ url_for('static', filename='images/wa copy.png') }}"
+        alt="Water Drop">
+
+    </div>
+
+</div>
+
+    <!-- FORM SECTION -->
+
+    <div class="form-card">
+
+        <h2 class="form-title">
+             Enter Water Parameters
+        </h2>
+
+        <form action="/predict" method="POST">
+
+            <input type="number" step="any" name="ph" placeholder="Enter pH" required>
+
+            <input type="number" step="any" name="hardness" placeholder="Enter Hardness" required>
+
+            <input type="number" step="any" name="solids" placeholder="Enter Solids" required>
+
+            <input type="number" step="any" name="chloramines" placeholder="Enter Chloramines" required>
+
+            <input type="number" step="any" name="sulfate" placeholder="Enter Sulfate" required>
+
+            <input type="number" step="any" name="conductivity" placeholder="Enter Conductivity" required>
+
+            <input type="number" step="any" name="organic_carbon" placeholder="Enter Organic Carbon" required>
+
+            <input type="number" step="any" name="trihalomethanes" placeholder="Enter Trihalomethanes" required>
+
+            <input type="number" step="any" name="turbidity" placeholder="Enter Turbidity" required>
+
+            <button type="submit" class="btn">
+                Analyze Water Quality →
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <div class="feature-card">
+            <h3>🧪 Potability Prediction</h3>
+            <p>Determine whether water is safe for drinking.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📊 Confidence Score</h3>
+            <p>Measure the reliability of model predictions.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>⚠ Parameter Alerts</h3>
+            <p>Detect abnormal water quality parameters.</p>
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-box">
+            <h2>9+</h2>
+            <p>Water Parameters</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>ML</h2>
+            <p>Random Forest Model</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>70%</h2>
+            <p>Prediction Accuracy</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>Safe</h2>
+            <p>Decision Support</p>
+        </div>
+
+    </section>
+
+    <!-- FUTURE SCOPE -->
+
+    <section class="future" id="future">
+
+        <h2>Future Scope</h2>
+
+        <p>
+Future versions can integrate IoT sensors, real-time monitoring,
+mobile applications, and smart alert systems for continuous
+water quality assessment.
+</p>
+
+    </section>
+
+</body>
+</html>
